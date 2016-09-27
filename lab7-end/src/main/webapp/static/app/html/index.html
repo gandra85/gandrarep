@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html ng-app="wafepaApp">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>WAFEPA</title>
+
+        <!-- Bootstrap -->
+        <link href="/static/css/bootstrap.css" rel="stylesheet">
+        <link href="/static/css/bootstrap-theme.css" rel="stylesheet">
+		<link href="/static/css/mine.css" rel="stylesheet">
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="/static/assets/js/jquery-2.1.1.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="/static/assets/js/bootstrap.js"></script>
+        
+        <script src="static/assets/js/angular.js"></script>
+		<script src="static/assets/js/angular-route.js"></script>
+		<script src="static/app/js/main.js"></script>
+    </head>
+    <body>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#/">Home</a>
+                    <a class="navbar-brand" href="#/activities">Activities</a>
+                    <a class="navbar-brand" href="#/users">Users</a>
+                </div>
+            </div>
+        </div>
+        <div class="jumbotron">
+            <div class="container text-center">
+                <h1>WAFEPA</h1>
+                <p>Web Application For Evaluating Physical Activities</p>
+            </div>
+        </div>
+        
+        <!-- content here -->
+        <div class="container" ng-view>
+        </div>
+        
+	   	<div class="page-footer">
+			Copyright JWD 2016
+		</div>
+	</body>
+</html>

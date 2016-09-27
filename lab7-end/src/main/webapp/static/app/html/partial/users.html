@@ -1,0 +1,38 @@
+
+
+<h1>Users</h1>
+
+<table class="table table-bordered" ng-init="getUsers()">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Email</th>
+			<th>Address</th>
+			<th>First name</th>
+			<th>Last name</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		
+			<tr ng-repeat="user in users">	
+				<td>{{user.id}}</td>				
+				<td>{{user.email}}</td>
+				<td>{{address}}</td>
+				<td>{{user.firstname}}</td>
+				<td>{{user.lastname}}</td>
+				<td>
+					<button ng-click="deleteUsers(user.id)" class="btn btn-xs btn-danger">Delete</button>
+					<a href="#/users/edit/{{user.id}}" class="btn btn-xs btn-default"> Edit</a>
+					<a href="#/users/view/{{user.id}}" class="btn btn-xs btn-default"> View</a>
+					
+				</td>
+			</tr>
+	</tbody>
+</table>
+<div class="col-md-12 text-center">
+<span ng-hide="success"  class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>
+
+</div>
+<a href="#/users/add" class="btn btn-default">Add new user</a>
+
