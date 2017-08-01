@@ -1,0 +1,278 @@
+package com.vivi;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Scanner;
+
+public class vezba10 {
+	private static Scanner sc = new Scanner(System.in);
+	private static ArrayList<Integer> list = new ArrayList<>();
+	public static void main(String[] args) {
+		
+		list.add(3);
+		list.add(9);
+		list.add(105);
+		list.add(25);
+		list.add(-1);
+		list.add(3);
+		list.add(9);
+		list.add(105);
+		list.add(25);
+		list.add(-1);
+		
+	/**	
+		boolean uslov = true;
+		while(uslov){
+		check();
+		}
+		**/
+		odd();
+		
+		palindrom();
+		
+		onAll();
+		int[] n1 = {1,2,3};
+     	int [] n2 = {4,5,6};
+
+		concate(n1, n2);
+		rotateList();
+		returnDigits(25854);
+		hello();
+		piglatin();
+		
+		alternateEl();
+		System.out.println();
+		concate3();
+		
+	}
+	private static void reverse(){
+		Collections.reverse(list);
+		System.out.println(list);
+	}
+	private static void check(){
+		System.out.println("enter number: ");
+		int num = sc.nextInt();
+		int count = 0;
+		for(int i = 0; i<list.size();i++){
+			if(num == list.get(i)){
+				count++;
+				System.out.println("it occurs " + count + " times");
+			}
+		}
+	}
+	
+	private static void odd(){
+		for(int i = 0; i<list.size();i++){
+		if(i%2==0){		
+				System.out.println(list.get(i));
+		}
+		}
+	}
+	private static void palindrom(){
+	String pali = "anavoilovana";
+	String reverse= "";
+	
+	for (int i = pali.length()-1; i>=0; i-- ){
+		reverse+= pali.charAt(i);
+		}
+	System.out.println(reverse);
+	if(pali.equals(reverse)){
+		System.out.println("String je palindrom");
+	}else{
+		System.out.println("Nije palindrom");
+	}
+	
+	
+	}
+	
+	public static void onAll(){
+		ArrayList<Integer> lista = new ArrayList<>();
+		for(int i =0; i<1000; i++ ){
+			lista.add(i);
+		}
+		for(int i = 0; i<lista.size();i++){
+			int sqrt = (int) Math.sqrt(lista.get(i));
+			if(sqrt * sqrt == lista.get(i)){
+				System.out.println( lista.get(i) + "=" + sqrt + "*"+ sqrt);
+			}
+			}
+		}
+	public static void concate(int[]n1, int[]n2){
+		int a, b, c;
+//		int[] n1 = {1,2,3};
+//		int [] n2 = {4,5,6};
+		
+		int[] n3 = new int[n1.length + n2.length];
+		int count = 0;
+		for(int i = 0; i<n1.length; i++){
+			n3[i] = n1[i];
+			count++;
+		}
+		for(int i = 0; i<n2.length;i++){
+			n3[count++] = n2[i];
+		}
+		for(int i =0; i<n3.length; i++){
+			System.out.print(n3[i] + " ");
+		}
+	}
+	
+	
+	public static void concate2(){
+		
+		int[] n1 = {1,2,3};
+		int [] n2 = {4,5,6};
+		
+		int[] n3 = new int[n1.length + n2.length];
+		int count = 0;
+		for(int i = 0; i<n1.length; i++){
+			n3[i] = n1[i];
+			count++;
+		}
+		for(int i = 0; i<n2.length;i++){
+			n3[count++] = n2[i];
+		}
+		for(int i =0; i<n3.length; i++){
+			System.out.print(n3[i] + " ");
+		}
+	}
+	
+	public static void rotateList(){
+		List numbers = new ArrayList<>();
+		System.out.println();
+		System.out.println("Before");
+		for(int i =0; i < 10; i++){
+			numbers.add(i);
+			System.out.print(" " + numbers.get(i));
+		}
+		System.out.println();
+		Collections.rotate(numbers, 2);
+		System.out.println("After");
+		for(int i = 0; i< numbers.size(); i++){
+			System.out.print(" " + numbers.get(i));
+		}
+	}
+	
+	public static void returnDigits(int n){
+		
+		String num = String.valueOf(n);
+		char[] digits = num.toCharArray();
+		System.out.println();
+		for(int i = 0; i<digits.length; i++){
+		System.out.print(digits[i] + " ");
+		}
+		System.out.println();
+	}
+	
+	public static void hello(){
+		ArrayList<String> hello = new ArrayList<>();
+		hello.add("Hello");
+		hello.add("World");
+		hello.add("in");
+		hello.add("a");
+		hello.add("frame");
+		
+		for (int i = 0; i<hello.size();i++){
+			
+		}
+		
+//		String hello = "*******\n*Hello*\n*World*\n*in   *\n*a    *\n*frame*\n*********";
+		System.out.format("%9s", hello );
+		System.out.println();
+	}
+	
+	public static void piglatin(){
+
+		String word = "The quick brown fox";
+		String pig = "";
+		
+		String [] parts = word.split(" ");
+		String part1 = parts[0];
+		String part2 = parts[1];
+		String part3 = parts[2];
+		
+		String part1New = part1.substring(1).toUpperCase() + part1.charAt(0) + "ay";
+		String part2New = part2.substring(1) + part2.toLowerCase().charAt(0) + "ay";
+		String part3New = part3.substring(1) + part3.toLowerCase().charAt(0) + "ay";
+		
+		
+		pig = part1New +" " + part2New+" " + part3New;
+		
+		System.out.println(pig);	
+		
+	}
+	
+	public static void alternateEl(){
+		
+		char [] arr1= {'1','2','3'};
+		char [] arr2= {'a','b','c'};
+
+
+		int l1= arr1.length;
+		int l2=arr2.length;
+
+		int l3=l1+l2;
+
+		char [] arr3=new char[l1+l2];
+
+		int i=0;
+		int j=0;
+		int k=0;
+		int m=0;
+		int r=0;
+
+		if(l1<l2)
+		    r=l1;
+		else
+		    r=l2;
+
+		while(m<r)
+		{
+		    arr3[k++]=arr1[i++];
+		    arr3[k++]=arr2[j++];
+		    m++;
+		}
+
+		while(k<l3)
+		{
+		    if(l1<l2)
+		        arr3[k++]=arr2[j++];
+		    else
+		        arr3[k++]=arr1[i++];
+		}
+
+		for(int n=0;n<l3;n++)
+		{
+		    System.out.print(arr3[n]+" ");
+		}
+
+		
+	}
+	
+	
+	
+	public static void concate3(){
+		char [] niz1 = {'1','2','3'};
+		char [] niz2 = {'a','b','c'};
+		
+		
+		char [] niz3 = new char[niz1.length + niz2.length];
+		int count = 0;
+		for(int i = 0; i< niz1.length; i++){
+			niz3[i] = niz1[i];
+			count++;
+		}
+		for(int i = 0; i< niz2.length; i++){
+			niz3[count++] = niz2[i];
+		}
+		for (int i =0; i<niz3.length; i++){
+			
+			System.out.print(niz3[i]+ " ");
+		}
+	}
+	
+	
+	
+	
+	
+}
